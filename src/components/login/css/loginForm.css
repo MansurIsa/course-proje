@@ -1,0 +1,67 @@
+form {
+    width: 100%;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+
+}
+
+form div label {
+    background-color: var(--mainColorFirst);
+    padding: 6px 12px;
+
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 23.44px;
+    border-radius: 6px 6px 0 0;
+    color: var(--white);
+
+}
+
+form div input {
+    padding: 15px 13px;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 21.09px;
+    border: 0.75px solid var(--gray);
+    color: var(--black);
+    border-radius: 0 6px 6px 6px;
+    width: 100%;
+
+}
+
+form div:nth-child(2) {
+    margin-top: 28px;
+    margin-bottom: 15px;
+}
+
+form a {
+    color: var(--gray2);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 21.09px;
+    margin-bottom: 52px;
+    display: block;
+    width: 138px;
+    margin-left: auto;
+
+}
+
+form button {
+    color: var(--mainColorSecond);
+    background: none;
+    border: 1px solid var(--mainColorSecond);
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 21.09px;
+   padding: 9px 15px;
+   border-radius: 6px;
+   margin-left: auto;
+   margin-right: auto;
+   display: block;
+
+}

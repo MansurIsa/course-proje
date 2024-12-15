@@ -1,0 +1,14 @@
+.login_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+.logo_login_form{
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+    align-items: flex-start;
+    
+}
