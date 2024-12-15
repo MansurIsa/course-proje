@@ -1,0 +1,15 @@
+.logo_lang {
+  margin-top: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.logo_lang_img {
+  width: 223px;
+}
+.logo_flag {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
