@@ -1,9 +1,10 @@
 .title_card {
-  background: rgb(202, 32, 32);
+  background: rgba(255, 255, 255, 1);
   padding: 10px 10px 0px 10px;
   border-radius: 6px;
   position: relative;
-  min-width: 220px;
+  min-height: 46px;
+  min-width: 227px;
 }
 .title_card h4 {
   font-size: 2rem;
