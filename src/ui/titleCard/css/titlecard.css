@@ -1,0 +1,13 @@
+.title_card {
+  background: rgb(202, 32, 32);
+  padding: 10px 10px 0px 10px;
+  border-radius: 6px;
+  position: relative;
+  min-width: 220px;
+}
+.title_card h4 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 23.44px;
+  color: rgba(0, 0, 0, 1);
+}
