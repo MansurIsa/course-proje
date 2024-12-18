@@ -1,9 +1,9 @@
 import React from "react";
 import './css/titleSearch.css'
-const TitleSearch = () => {
+const TitleSearch = ({title}) => {
   return (
     <div className="title_search_container">
-      <h3>Dashboard</h3>
+      <h3>{title}</h3>
       <div className="title_search_input_div">
         <input type="text" placeholder="Search" />
         <svg

@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
-import  {HomeReducer} from './slices/homeSlice';
-import {AboutReducer} from './slices/aboutSlice';
-import {BlogsReducer} from './slices/blogsSlice';
+import { ClassesReducer} from './slices/classesSlice';
 import {ContactReducer} from './slices/contactSlice';
 import { WorksReducer } from './slices/worksSlice';
 import { ServicesReducer } from './slices/servicesSlice';
+import { LoginReducer } from './slices/loginSlice';
+import { SidebarReducer } from './slices/sidebarSlice';
 
 const rootReducer = combineReducers({
-  home: HomeReducer,
-  about: AboutReducer,
-  blog: BlogsReducer,
+  sidebar: SidebarReducer,
+  login: LoginReducer,
+  classes: ClassesReducer,
   contact: ContactReducer,
   work: WorksReducer,
   service: ServicesReducer,

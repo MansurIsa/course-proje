@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./css/sidebar.css"
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { getUserObj } from '../../actions/sidebar'
 
 const Sidebar = () => {
+    const dispatch=useDispatch()
+    let getEmail=localStorage.getItem("logEmail")
+    const {userObj}=useSelector(state=>state.sidebar)
+
+    useEffect(()=>{
+        dispatch(getUserObj(getEmail))
+    },[dispatch])
     return (
         <div className='sidebar_container'>
             <div className="sidebar_header">
-                <h2>Taghiyev Mirimran</h2>
-                <p>student</p>
+                <h2>{userObj?.last_name} {userObj?.first_name}</h2>
+                <p>{userObj?.is_staff===true? "admin": userObj?.category==="T"? "teacher": "student"}</p>
                 <div>
                     <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_741_631)">

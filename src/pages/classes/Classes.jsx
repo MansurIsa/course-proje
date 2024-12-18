@@ -1,83 +1,51 @@
+import { useDispatch, useSelector } from "react-redux";
+import LogoLang from "../../layouts/logoLang/LogoLang";
 import Sidebar from "../../layouts/sidebar/Sidebar";
+import TitleSearch from "../../layouts/titleSearch/TitleSearch";
 import TitleCard from "../../ui/titleCard/TitleCard";
 import "./css/classes.css";
+import { useEffect } from "react";
+import { getCourses, getMyCourses } from "../../actions/classesAction";
 const Classes = () => {
-  const classesData = [
-    {
-      id: 1,
-      title: "English Placement Test",
-    },
-    {
-      id: 2,
-      title: "I.T Placement Test",
-    },
-    {
-      id: 3,
-      title: "SAT I Reading",
-    },
-    {
-      id: 4,
-      title: "SAT I Writing",
-    },
-    {
-      id: 5,
-      title: "SAT I Writing",
-    },
-    {
-      id: 6,
-      title: "SAT I Writing",
-    },
-    {
-      id: 7,
-      title: "SAT I Writing",
-    },
-    {
-      id: 8,
-      title: "SAT I Writing",
-    },
-    {
-      id: 9,
-      title: "SAT I Writing",
-    },
-    {
-      id: 10,
-      title: "SAT I Writing",
-    },
-    {
-      id: 11,
-      title: "SAT I Writing",
-    },
-    {
-      id: 12,
-      title: "SAT I Writing",
-    },
-    {
-      id: 13,
-      title: "SAT I Writing",
-    },
-    {
-      id: 14,
-      title: "SAT I Writing",
-    },
-    {
-      id: 15,
-      title: "SAT I Writing",
-    },
-    {
-      id: 16,
-      title: "SAT I Writing",
-    },
-  ];
+
+  const dispatch=useDispatch()
+
+  useEffect(()=>{
+    dispatch(getMyCourses())
+    dispatch(getCourses())
+  },[dispatch])
+
+
+  const {courses,myCourses}=useSelector(state=>state.classes)
+  const {userObj}=useSelector(state=>state.sidebar)
+
+  
+  
   return (
     <section className="classes_container">
       <Sidebar />
-      <div className="container classes_main">
-        <div className="classes_cards">
-          {classesData.map((data) => (
-            <TitleCard key={data.id} data={data} />
-          ))}
+      <div className='main_container container'>
+        <LogoLang />
+        <TitleSearch title="Course"/>
+        <div className="container classes_main">
+          <div className="classes_cards">
+            {/* {classesData.map((data) => (
+              <TitleCard key={data.id} data={data} />
+            ))} */}
+
+            {
+              userObj?.is_staff? 
+              courses.map((data,i)=>{
+                return  <TitleCard key={data.id} data={data} />
+              }): 
+              myCourses.map((data,i)=>{
+                return  <TitleCard key={data.id} data={data} />
+              })
+            }
+          </div>
         </div>
       </div>
+
     </section>
   );
 };

@@ -9,7 +9,7 @@ const DashboardMain = () => {
   return (
     <div className='main_container container'>
         <LogoLang/>
-        <TitleSearch/>
+        <TitleSearch title={"Dashboard"}/>
         <DashboardTopContainer/>
         <DashboardBottomContainer/>
     </div>
