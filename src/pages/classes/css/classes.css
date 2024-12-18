@@ -1,0 +1,14 @@
+.classes_cards {
+  display: grid;
+  margin: 32px 0 84px 0;
+  column-gap: 30px;
+  row-gap: 80px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.classes_main {
+  width: 100%;
+}
+.classes_container {
+  display: flex;
+}
