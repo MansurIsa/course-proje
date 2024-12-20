@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap");
 
 .dashboard_top_cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 58px;
   margin-bottom: 49px;
 }

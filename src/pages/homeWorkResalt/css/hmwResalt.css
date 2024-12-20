@@ -1,0 +1,74 @@
+.hwResalt {
+  display: flex;
+  justify-content: space-between;
+}
+.hwResalt_main {
+  width: 100%;
+}
+.hwresalt_card_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(227px, 1fr));
+  gap: 29px;
+  margin-top: 14px;
+  margin-bottom: 58px;
+}
+.hwresalt_card {
+  min-width: 227px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.hwresalt_card_header {
+  width: 191px;
+  font-size: 1.7rem;
+  font-weight: 300;
+  line-height: 19.92px;
+  color: var(--black);
+  text-align: center;
+  padding: 8px 0;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background-color: var(--gray);
+}
+.hwresalt_card_body {
+  width: 100%;
+  padding: 15px 12px;
+  background-color: var(--white);
+  box-shadow: 0px 0px 9px 0px rgba(69, 69, 69, 0.23);
+  border-radius: 6px;
+}
+.hwresalt_card_body_item {
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 22.27px;
+  color: var(--black);
+  margin-bottom: 8px;
+}
+.hwresalt_card_body_item span {
+  color: var(--gray2);
+  font-size: 1.6rem;
+}
+.hwresalt_card_body_item_pass_btn {
+  font-family: "Asap", serif;
+  margin-left: 25px;
+  padding: 5px 8px;
+  background-color: var(--mainColorFirst);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hwresalt_card_bottom {
+  padding: 6px 27px;
+  background-color: var(--mainColorFirst);
+  color: var(--white);
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+.fail{
+    background-color: rgba(131, 0, 0, 1);
+}

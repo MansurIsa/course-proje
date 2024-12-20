@@ -1,12 +1,12 @@
 .dashboard_bottom_cards {
-  display: flex;
-  align-items: center;
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   flex-wrap: wrap;
   gap: 41px;
 }
 .dashbord_bottom_card {
   display: flex;
-  width: 130px;
+  min-width: 130px;
   align-items: center;
   flex-direction: column;
   justify-content: center;
