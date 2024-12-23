@@ -1,0 +1,13 @@
+.celt_card_btn {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 13.75px;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(30, 57, 144, 1);
+  border-radius: 4px;
+  padding: 5px 5px 3px 6px;
+  outline: none;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
