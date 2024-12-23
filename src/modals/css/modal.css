@@ -1,0 +1,61 @@
+.modal_container{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+}
+.overlay{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+
+} 
+.modal_container .modal_card{
+    background-color: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 0 9px rgba(69, 69, 69, 0.23);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 10px;
+}
+.modal_container .modal_card .close_btn{
+    margin-left: auto;
+    background-color: red;
+    color: var(--white);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 1.8rem;
+}
+.modal_container .modal_card select{
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+}
+.modal_container .modal_card input{
+    background: none;
+    outline: none;
+    padding: 4px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+   
+}
+.modal_container .modal_card .save_btn{
+    margin-left: auto;
+    background-color: var(--mainColorFirst);
+    color: var(--white);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 1.8rem;
+}

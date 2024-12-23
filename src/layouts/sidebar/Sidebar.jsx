@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./css/sidebar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserObj } from "../../actions/sidebar";
 
@@ -8,10 +8,17 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   let getEmail = localStorage.getItem("logEmail");
   const { userObj } = useSelector((state) => state.sidebar);
+  const navigate=useNavigate()
 
   useEffect(() => {
     dispatch(getUserObj(getEmail));
   }, [dispatch]);
+
+  const logOut=()=>{
+    localStorage.removeItem("ACCESS__TOKEN")
+    localStorage.removeItem("logEmail")
+    navigate("/")
+  }
   return (
     <div className="sidebar_container">
       <div className="sidebar_header">
@@ -249,7 +256,7 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to={"/home-work"}>
+          <NavLink to={"/homework"}>
             <svg
               width="15"
               height="20"
@@ -674,7 +681,7 @@ const Sidebar = () => {
           </svg>
           Edit Setting
         </button>
-        <button>
+        <button onClick={logOut}>
           <svg
             width="20"
             height="17"

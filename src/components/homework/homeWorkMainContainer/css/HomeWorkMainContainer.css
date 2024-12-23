@@ -6,3 +6,17 @@
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 
+.hw_create_btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.hw_create_btn button{
+  background-color: var(--mainColorFirst);
+  color: var(--white);
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 1.8rem;
+  cursor: pointer;
+}

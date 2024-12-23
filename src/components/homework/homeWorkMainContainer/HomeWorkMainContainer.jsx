@@ -1,6 +1,22 @@
+import { useEffect } from "react";
 import CeltCard from "../../../ui/celtCard/celtCardMain/CeltCardMain";
 import "./css/HomeWorkMainContainer.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getHomeWorks, getMyHomeWorks } from "../../../actions/homeworkAction";
 const HomeWorkMainContainer = () => {
+  const dispatch=useDispatch();
+
+  useEffect(()=>{
+    dispatch(getMyHomeWorks())
+    dispatch(getHomeWorks())
+  },[dispatch])
+
+  const {homeworks,myHomeworks}=useSelector(state=>state.homework)
+  const {userObj}=useSelector(state=>state.sidebar)
+
+  console.log(homeworks);
+  console.log(myHomeworks);
+  
   const arr = [
     {
       id: 1,
@@ -47,9 +63,18 @@ const HomeWorkMainContainer = () => {
   ];
   return (
     <div className="home_work_main">
-      {arr?.map((card) => (
+      {/* {arr?.map((card) => (
         <CeltCard key={card.id} card={card} />
-      ))}
+      ))} */}
+      {
+        userObj?.is_staff?
+        homeworks?.map((data,i)=>{
+          return  <CeltCard key={i} data={data} />
+        }): 
+        myHomeworks?.map((data,i)=>{
+          return  <CeltCard key={i} data={data} />
+        })
+      }
     </div>
   );
 };

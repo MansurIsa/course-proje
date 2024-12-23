@@ -1,6 +1,6 @@
 import axios from "axios";
-import { baseUrl } from "../mainApi";
 import { getCoursesFunc, getMyCoursesFunc } from "../redux/slices/classesSlice";
+import { baseUrl } from "../mainApi";
 
 export const getCoursesX = () => async dispatch => {
     // dispatch(isLoading());
