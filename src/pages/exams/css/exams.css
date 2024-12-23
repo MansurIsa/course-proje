@@ -1,0 +1,74 @@
+.exams_container {
+  display: flex;
+}
+
+.exams_card_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.exam_card {
+  min-width: 283px;
+}
+
+.exam_card_title {
+  width: 238px;
+  margin: 0 auto;
+  padding: 6px 0;
+  background-color: var(--gray);
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 25.78px;
+  border-radius: 6px 6px 0 0;
+}
+
+.exam_card_content {
+  box-shadow: 0px 0px 9px 0px #4545453b;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.exam_name,
+.exam_time {
+  font-size: 2.2rem;
+  font-weight: 400;
+  line-height: 25.78px;
+}
+
+.exam_time {
+  margin-top: 16px;
+  margin-bottom: 2px;
+}
+
+.exam_name span {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 25.78px;
+  color: var(--gray2);
+}
+
+.exam_time span {
+  background-color: var(--mainColorFirst);
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 21.09px;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.exam_start_btn {
+  border: 0;
+  border-radius: 3px;
+  background-color: var(--mainColorFirst);
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 16.04px;
+  padding: 6px 8px;
+  margin-left: auto;
+  display: block;
+  text-transform: uppercase;
+}
