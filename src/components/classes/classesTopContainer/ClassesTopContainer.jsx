@@ -14,6 +14,9 @@ const ClassesTopContainer = () => {
   const { courses, myCourses } = useSelector((state) => state.classes);
   const { userObj } = useSelector((state) => state.sidebar);
 
+  console.log(courses,myCourses);
+  
+
   return (
     <div className="classes_main">
       <div className="classes_cards">
