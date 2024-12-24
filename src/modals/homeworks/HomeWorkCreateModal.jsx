@@ -26,18 +26,22 @@ const HomeWorkCreateModal = () => {
         
         dispatch(homeWorkCreateSave(obj))
     }
+
+  
+    
   return (
     <div className='modal_container'>
         <div onClick={()=>dispatch(closeModal())} className="overlay"></div>
         <div className="modal_card">
             <button onClick={()=>dispatch(closeModal())} className='close_btn'>close</button>
-            <select value={myGroups[0]?.name} onChange={(e)=>dispatch(hwCreateSelectHandle(e.target.value))}>
-                {
-                    myGroups?.map((data,i)=>{
-                        return <option value={ data?.name} key={i}>{data?.name}</option>
-                    })
-                }
-            </select>
+            <select value={hwCreateSelectVal} onChange={(e) => dispatch(hwCreateSelectHandle(e.target.value))}>
+                    <option value="" disabled>Select a group</option>
+                    {
+                        myGroups?.map((data, i) => {
+                            return <option value={data?.name} key={i}>{data?.name}</option>
+                        })
+                    }
+                </select>
             <input type="text" value={hwCreateInpVal} onChange={(e)=>dispatch(hwCreateInpHandle(e.target.value))}/>
             <button className='save_btn'onClick={saveBtn}>Save</button>
         </div>
