@@ -3,11 +3,10 @@ import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
 import { Routes, Route } from "react-router-dom";
 import Exams from "./pages/exams/Exams";
-
 import Classes from "./pages/classes/Classes";
 import HomeWork from "./pages/homework/HomeWork";
-import HWResalt from './pages/homeWorkResalt/HWResalt';
-
+import HWResalt from "./pages/homeWorkResalt/HWResalt";
+import Resources from "./pages/resources/Resources";
 
 const App = () => {
   return (
@@ -19,6 +18,7 @@ const App = () => {
       <Route path="/exams-results" element={<Exams />} />
       <Route path="/homework" element={<HomeWork />} />
       <Route path="/hw-results" element={<HWResalt />} />
+      <Route path="/resources" element={<Resources />} />
     </Routes>
   );
 };

@@ -1,0 +1,53 @@
+.resources_card_container {
+  display: grid;
+  margin-top: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(213px, 1fr));
+  gap: 47px;
+}
+
+.resources_card {
+  width: 213px;
+}
+
+.resources_card_title {
+  width: 178px;
+  background-color: var(--gray);
+  padding: 8px 30px;
+  margin: 0 auto;
+  border-radius: 6px 6px 0 0;
+  font-size: 1.8rem;
+  font-weight: 300;
+  line-height: 21.09px;
+}
+
+.resources_card_body {
+  box-shadow: 0px 0px 9px 0px #4545453b;
+  padding: 14px 0 10px 13px;
+  border-radius: 6px;
+}
+
+.resources_card_body_content {
+  font-size: 1.9rem;
+  font-weight: 400;
+  line-height: 22.27px;
+}
+
+.resources_card_body_content span {
+  font-size: 1.9rem;
+  font-weight: 300;
+  line-height: 22.27px;
+  color: var(--gray2);
+}
+
+.resources_card_btn {
+  display: block;
+  margin-left: auto;
+  border: none;
+  background-color: var(--mainColorFirst);
+  padding: 6px 15px 4px;
+  border-radius: 0 0 6px 6px;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 16.41px;
+  color: var(--white);
+}
