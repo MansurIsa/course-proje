@@ -1,6 +1,6 @@
 import axios from "axios";
 import { baseUrl } from "../mainApi";
-import { getCoursesFunc, getMyCoursesFunc } from "../redux/slices/classesSlice";
+import { getAccountsFunc, getCoursesFunc, getMyCoursesFunc } from "../redux/slices/classesSlice";
 
 export const getCoursesX = () => async dispatch => {
     // dispatch(isLoading());
@@ -40,3 +40,26 @@ export const getMyCoursesX = () => async dispatch => {
 
         });
 }
+
+
+export const getAccounts = () => async dispatch => {
+
+
+    return await axios.get(`${baseUrl}accounts/`, {
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('ACCESS__TOKEN')}`
+        }
+    })
+        .then(resp => {
+            console.log(resp.data);
+         
+            dispatch(getAccountsFunc(resp.data))
+        }).catch(err => {
+            console.log(err);
+
+        });
+}
+
+
+
+

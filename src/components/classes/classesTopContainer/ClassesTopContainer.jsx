@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import TitleCard from "../../../ui/titleCard/TitleCard";
 import { useEffect } from "react";
-import { getCoursesX, getMyCoursesX } from "../../../actions/test";
+import { getCoursesX, getMyCoursesX } from "../../../actions/classesAction";
+// import { getCoursesX, getMyCoursesX } from "../../../actions/test";
 
 const ClassesTopContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCoursesX);
-    dispatch(getMyCoursesX);
+    dispatch(getCoursesX());
+    dispatch(getMyCoursesX());
   }, [dispatch]);
 
   const { courses, myCourses } = useSelector((state) => state.classes);
