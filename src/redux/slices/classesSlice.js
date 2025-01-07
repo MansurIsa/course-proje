@@ -7,7 +7,13 @@ const ClassesSlice = createSlice({
     myCourses: [],
     courseCreateModal: false,
     courseCreateInpVal: "",
-    accounts: []
+    accounts: [],
+    updateClassesModal: false,
+    updateClassObj: {},
+    courseUpdateInpVal: "",
+    accountsUpdate: [],
+    viewClassesModal: false,
+    viewClassObj: {}
   },
   reducers: {
     getCoursesFunc: (state, action) => {
@@ -21,16 +27,35 @@ const ClassesSlice = createSlice({
     },
     closeFunc: (state)=>{
       state.courseCreateModal=false
+      state.updateClassesModal=false
+      state.viewClassesModal=false
     },
     courseCreateInpHandle: (state, action) => {
       state.courseCreateInpVal=action.payload
     },
     getAccountsFunc: (state,action)=>{
       state.accounts=action.payload
+    },
+    updateClassesModalFunc: (state,action)=>{
+      state.updateClassesModal=true
+      state.updateClassObj=action.payload
+      state.courseUpdateInpVal=action.payload.name
+      // state.accounts=action.payload.accounts
+    },
+    courseUpdateInpHandle: (state,action)=>{
+      state.courseUpdateInpVal=action.payload
+    },
+    accountsUpdateFunc: (state,action)=>{
+      state.accountsUpdate=action.payload
+    },
+    viewClassesModalFunc: (state,action)=>{
+      state.viewClassesModal=true
+      state.viewClassObj=action.payload
     }
   },
 });
 
 export const ClassesReducer = ClassesSlice.reducer;
 export const { getCoursesFunc, getMyCoursesFunc,courseCreateModalBtn,
-  closeFunc,courseCreateInpHandle,getAccountsFunc } = ClassesSlice.actions;
+  closeFunc,courseCreateInpHandle,getAccountsFunc,updateClassesModalFunc,courseUpdateInpHandle,accountsUpdateFunc ,
+  viewClassesModalFunc} = ClassesSlice.actions;

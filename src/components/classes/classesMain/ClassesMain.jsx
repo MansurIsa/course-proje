@@ -4,12 +4,14 @@ import TitleSearch from "../../../layouts/titleSearch/TitleSearch";
 import ClassesTopContainer from "../classesTopContainer/ClassesTopContainer";
 import { courseCreateModalBtn } from "../../../redux/slices/classesSlice";
 import CourseCreateModal from "../../../modals/courses/CourseCreateModal";
+import CourseUpdateModal from "../../../modals/courses/CourseUpdateModal";
+import CourseViewModal from "../../../modals/courses/CourseViewModal";
 
 
 
 const ClassesMain = () => {
   const dispatch=useDispatch()
-  const {courseCreateModal}=useSelector(state=>state.classes)
+  const {courseCreateModal,updateClassesModal,viewClassesModal}=useSelector(state=>state.classes)
 
 
   return (
@@ -21,6 +23,8 @@ const ClassesMain = () => {
         <button onClick={()=>dispatch(courseCreateModalBtn())}>Create</button>
       </div>
       {courseCreateModal && <CourseCreateModal/>}
+      {updateClassesModal && <CourseUpdateModal />}
+      {viewClassesModal && <CourseViewModal/>}
     </div>
   );
 };

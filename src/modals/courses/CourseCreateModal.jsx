@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { closeModal } from '../../redux/slices/homeworkSlice'
 import { closeFunc, courseCreateInpHandle } from '../../redux/slices/classesSlice'
 import Multiselect from 'multiselect-react-dropdown';
-import { getAccounts } from '../../actions/classesAction';
+import { courseCreate, getAccounts } from '../../actions/classesAction';
 
 const CourseCreateModal = () => {
     const dispatch = useDispatch()
@@ -17,11 +17,22 @@ const CourseCreateModal = () => {
         dispatch(getAccounts())
     },[dispatch])
 
-    const onSelect=()=>{
-
+    const onSelect=(e)=>{
+        console.log(e);
+        setSelectedValue(e)
     }
-    const onRemove=()=>{
+    const onRemove=(e)=>{
+        console.log(e);
         
+    }
+
+    const data={
+        name: courseCreateInpVal,
+        accounts: selectedValue
+    }
+
+    const saveBtn=()=>{
+        dispatch(courseCreate(data))
     }
     return (
         <div className='modal_container'>
@@ -32,6 +43,7 @@ const CourseCreateModal = () => {
                 <input type="text" value={courseCreateInpVal} onChange={(e) => dispatch(courseCreateInpHandle(e.target.value))} />
                 <Multiselect
                     isObject={false}
+                    showCheckbox
                     options={accounts.map(data=>{
                         return data?.email
                     })} // Options to display in the dropdown
@@ -40,7 +52,7 @@ const CourseCreateModal = () => {
                     onRemove={onRemove} // Function will trigger on remove event
                     displayValue="name" // Property name to display in the dropdown options
                 />
-                <button className='save_btn'>Save</button>
+                <button onClick={saveBtn} className='save_btn'>Save</button>
             </div>
 
         </div>
