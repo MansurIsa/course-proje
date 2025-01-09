@@ -6,12 +6,13 @@ import { courseCreateModalBtn } from "../../../redux/slices/classesSlice";
 import CourseCreateModal from "../../../modals/courses/CourseCreateModal";
 import CourseUpdateModal from "../../../modals/courses/CourseUpdateModal";
 import CourseViewModal from "../../../modals/courses/CourseViewModal";
+import CourseViewUpdateModal from "../../../modals/courses/CourseViewUpdateModal";
 
 
 
 const ClassesMain = () => {
   const dispatch=useDispatch()
-  const {courseCreateModal,updateClassesModal,viewClassesModal}=useSelector(state=>state.classes)
+  const {courseCreateModal,updateClassesModal,viewClassesModal,viewUpdateModal}=useSelector(state=>state.classes)
 
 
   return (
@@ -25,6 +26,7 @@ const ClassesMain = () => {
       {courseCreateModal && <CourseCreateModal/>}
       {updateClassesModal && <CourseUpdateModal />}
       {viewClassesModal && <CourseViewModal/>}
+      {viewUpdateModal && <CourseViewUpdateModal/>}
     </div>
   );
 };

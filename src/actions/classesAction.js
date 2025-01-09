@@ -181,3 +181,43 @@ export const courseUpdate = (x,data) => async dispatch => {
 
         });
 }
+export const uniteUpdate = (x,data) => async dispatch => {
+
+
+    return await axios({
+        method: "PUT",
+        url: `${baseUrl}unit-update/${x}/`,
+        headers: {
+            Authorization: `Bearer ${localStorage.getItem('ACCESS__TOKEN')}`
+        },
+        data
+
+    })
+        .then(resp => {
+            console.log(resp);
+          
+            
+            if (resp.status === 200) {
+                Swal.fire({
+                    title: "Unite Melumatlari deyisdirildi",
+                    icon: "success",
+                    confirmButtonText: "OK",
+                    width: "400px"
+                }).then(() => {
+                    window.location.href = "/classes"
+                });
+            }
+
+        }).catch(err => {
+            console.log(err);
+            Swal.fire({
+                title: "Unite Melumatlari deyisdirilmedi",
+                icon: "error",
+                confirmButtonText: "OK",
+                width: "400px"
+            }).then(() => {
+                window.location.href = "/classes"
+            });
+
+        });
+}

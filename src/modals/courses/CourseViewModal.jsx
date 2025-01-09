@@ -1,5 +1,5 @@
 import React from 'react'
-import { closeFunc } from '../../redux/slices/classesSlice'
+import { closeFunc, viewClassesUniteModalFunc } from '../../redux/slices/classesSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 const CourseViewModal = () => {
@@ -19,7 +19,7 @@ const CourseViewModal = () => {
                                 <div key={i}>
                                     <p>{data?.name}</p>
                                     <div>
-                                        <button>update</button>
+                                        <button onClick={()=>dispatch(viewClassesUniteModalFunc(data))}>update</button>
                                         <button>delete</button>
                                         <button>view</button>
                                     </div>

@@ -18,6 +18,8 @@ export const postLogin = (data) => async dispatch => {
            localStorage.setItem("ACCESS__TOKEN", resp.data.access)
            window.location.href="/dashboard"
             // dispatch(stopLoading());
+  
+            
             localStorage.setItem("logEmail",data?.email)
         }).catch(err => {
             console.log(err);

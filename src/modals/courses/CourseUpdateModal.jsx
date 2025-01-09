@@ -30,8 +30,8 @@ const CourseUpdateModal = () => {
     }
 
     const data={
-        name: courseUpdateInpVal,
-        accounts: selectedValue
+       name: courseUpdateInpVal,
+        accounts: selectedValue 
     }
 
     
